@@ -184,10 +184,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageList:
   - {fileID: 8950160581200885780, guid: 0d85c88adac69e54c9198f2d0769a9c8, type: 3}
-  - {fileID: 624055587632577190, guid: 5f0a3489eedd9cb439e66bcee8d70451, type: 3}
-  - {fileID: 6891876829432943221, guid: 738f220df165bbf45bdcf32c23203b05, type: 3}
+  - {fileID: 5083427778831824268, guid: 5f0a3489eedd9cb439e66bcee8d70451, type: 3}
+  - {fileID: 2461871685787840445, guid: 738f220df165bbf45bdcf32c23203b05, type: 3}
   - {fileID: 8810565240047167731, guid: 35a88cd7d284f274085f5ec126321dc8, type: 3}
   canvas: {fileID: 629537536}
+  darkGrayTextColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   currentPage: {fileID: 0}
 --- !u!4 &245617372
 Transform:
@@ -561,7 +562,8 @@ MonoBehaviour:
   translatedSentences: []
   learningLanguage: 0
   systemLanguage: 3
-  userSelectedTheme: 1
+  userSelectedTheme: 4
+  isReady: 0
 --- !u!4 &2000850958
 Transform:
   m_ObjectHideFlags: 0

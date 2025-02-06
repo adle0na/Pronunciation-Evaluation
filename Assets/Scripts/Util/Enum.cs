@@ -20,5 +20,7 @@ public enum Language
     French,
     Korean,
     Japanese,
-    Chinese
+    Chinese,
+    Italian,
+    Russian
 }

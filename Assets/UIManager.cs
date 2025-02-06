@@ -9,7 +9,9 @@ public class UIManager : GenericSingleton<UIManager>
     [SerializeField] private List<GameObject> pageList;
 
     [SerializeField] private Transform canvas;
-    
+
+    public Color darkGrayTextColor;
+
     public GameObject currentPage;
 
     private void Start()

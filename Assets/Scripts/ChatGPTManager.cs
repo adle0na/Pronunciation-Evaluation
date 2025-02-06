@@ -31,15 +31,13 @@ namespace OpenAI
         // 학습 테마
         public Theme userSelectedTheme;
 
-        void Start()
-        {
-            InitStudy();
-        }
-
+        public bool isReady;
+        
         public void InitStudy()
         {
             openai = new OpenAIApi(apiKey: openai_key);
-
+            
+            isReady = false;            
             // 문장 생성 요청
             // 테마, 언어에 따라 10가지 문장 생성
             ExpectedSentences();
@@ -49,12 +47,13 @@ namespace OpenAI
         {
           var temp = new List<ChatMessage>();
             
-            string prompt = $"Generate exactly 10 sentences commonly used in a {userSelectedTheme.ToString().ToLower()} in {learningLanguage.ToString().ToLower()}. " +
-                            "Each sentence should be around 5 seconds long. " +
-                            $"Translate each sentence into {systemLanguage.ToString().ToLower()} and provide both. " +
-                            "Format: Original Sentence: [Original sentence] Translated Sentence: [Translated sentence] " +
-                            "Your response must contain only these pairs, nothing else. " +
-                            "Do not add introductions, explanations, or extra text.";
+          string prompt = $"Generate exactly 10 sentences commonly spoken by a tourist in a {userSelectedTheme.ToString().ToLower()} setting, in {learningLanguage.ToString().ToLower()}. " +
+                          "Each sentence should be around 5 seconds long. " +
+                          $"Translate each sentence into {systemLanguage.ToString().ToLower()} and provide both. " +
+                          "These sentences should be useful for a traveler communicating in common situations, such as asking for information, ordering food, or navigating unfamiliar places. " +
+                          "Format: Original Sentence: [Original sentence] Translated Sentence: [Translated sentence] " +
+                          "Your response must contain only these pairs, nothing else. " +
+                          "Do not add introductions, explanations, or extra text.";
             
             temp.Add(new ChatMessage { Role = "system", Content = prompt });
             
@@ -90,6 +89,8 @@ namespace OpenAI
                         translatedSentences.Add(translated);
                     }
                 }
+
+                isReady = true;
             }
             else
             {
