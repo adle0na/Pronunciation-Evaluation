@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class IntroUI : MonoBehaviour
 {
@@ -12,11 +13,13 @@ public class IntroUI : MonoBehaviour
     [SerializeField] private GameObject IntroVideo;
 
     [SerializeField] private CanvasGroup fadeCanvas;
-    [SerializeField]
+    [SerializeField] private VideoPlayer videoPlayer;
     
     private void Start()
     {
         AnimateIntro();
+
+        videoPlayer.loopPointReached += OnVideoEnd;
     }
 
     private void AnimateIntro()
@@ -52,5 +55,12 @@ public class IntroUI : MonoBehaviour
             
             LeanTween.alphaCanvas(fadeCanvas, 1, 1f).setEase(LeanTweenType.easeInOutQuad);
         });
+        
+        
+    }
+    
+    void OnVideoEnd(VideoPlayer vp)
+    {
+        UIManager.Instance.PageChange(1);
     }
 }

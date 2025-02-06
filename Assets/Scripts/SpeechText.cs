@@ -8,25 +8,23 @@ using UnityEngine;
 using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
 using Microsoft.CognitiveServices.Speech.PronunciationAssessment;
+using OpenAI;
+using TMPro;
 using UnityEngine.EventSystems;
 
-public class PronunciationAssessmentManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class PronunciationAssessmentManager : GenericSingleton<PronunciationAssessmentManager>
 {
     private string _microphoneID = null;
     private AudioClip _recording = null;
     private int _recordingLengthSec = 15;
     private int _recordingHZ = 22050;
-    
     const int BlockSize_16Bit = 2;
-    
     private bool enableMiscue = true;
     private bool isRecognizing = false;
-
     private bool isRecordAble = true;
 
-    public string language;
-    public string sampleText;
-    
+    [SerializeField] private TMP_Text currentTargetText;
+
     void Start()
     {
         if (Microphone.devices.Length <= 0)
@@ -36,15 +34,10 @@ public class PronunciationAssessmentManager : MonoBehaviour, IPointerDownHandler
             return;
         }
     }
-    
-    public void OnPointerDown(PointerEventData eventData)
+
+    public void SetTargetText(string sentence)
     {
-	    StartRecording();
-    }
-    
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        StopRecording();
+	    currentTargetText.text = sentence;
     }
     
     public void StartRecording()
@@ -81,7 +74,7 @@ public class PronunciationAssessmentManager : MonoBehaviour, IPointerDownHandler
 		    Debug.Log("녹음된 파일 저장 완료: " + filePath);
 
 		    // 저장된 오디오 파일을 사용하여 발음 평가 실행
-		    StartRealTimePronunciationAssessment(filePath, sampleText);
+		    StartRealTimePronunciationAssessment(filePath, "");
 	    }
     }
     
@@ -225,11 +218,12 @@ public class PronunciationAssessmentManager : MonoBehaviour, IPointerDownHandler
 		var config = SpeechConfig.FromSubscription("2yR76y3Nzuo6DMt9pynMc9YvxyyslQCe7djluvqXIlokyKrZtuLJJQQJ99BBACNns7RXJ3w3AAAYACOGx7ny", "koreacentral");
 		Debug.Log("발음 평가 시작");
 
+		string languageCode = GetLanguageCode();
+		
 		// 저장된 녹음 파일을 오디오 입력으로 사용
 		using (var audioInput = AudioConfig.FromWavFileInput(filePath))
 		{
-			var language = this.language;
-			using (var recognizer = new SpeechRecognizer(config, language, audioInput))
+			using (var recognizer = new SpeechRecognizer(config, languageCode, audioInput))
 			{
 				var referenceText = sampleText;
 				var pronConfig = new PronunciationAssessmentConfig(referenceText, GradingSystem.HundredMark, Granularity.Phoneme, enableMiscue);
@@ -241,8 +235,6 @@ public class PronunciationAssessmentManager : MonoBehaviour, IPointerDownHandler
 					Debug.Log($"Recognized Text: {e.Result.Text}");
 					var pronResult = PronunciationAssessmentResult.FromResult(e.Result);
 					Debug.Log($"정확성: {pronResult.AccuracyScore}, 발음: {pronResult.PronunciationScore}, 완전성: {pronResult.CompletenessScore}, 유창함: {pronResult.FluencyScore}, 운율감: {pronResult.ProsodyScore}");
-					
-					
 				};
 
 				recognizer.SessionStopped += (s, e) =>
@@ -274,6 +266,20 @@ public class PronunciationAssessmentManager : MonoBehaviour, IPointerDownHandler
     private static int BytesPerSample (UInt16 bitDepth)
     {
 	    return bitDepth / 8;
+    }
+    
+    private string GetLanguageCode()
+    {
+	    switch (ChatGPTManager.Instance.learningLanguage)
+	    {
+		    case Language.Korean: return "ko-KR";
+		    case Language.Japanese: return "ja-JP";
+		    case Language.Chinese: return "zh-CN";
+		    case Language.English: return "en-US";
+		    case Language.German: return "de-DE";
+		    case Language.French: return "fr-FR";
+		    default: return "en-US";
+	    }
     }
 }
 
