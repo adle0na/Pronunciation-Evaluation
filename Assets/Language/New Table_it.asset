@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: New Table_it
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: it
+  m_SharedData: {fileID: 11400000, guid: b849166082219a941adbaa4214a67249, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1287348125696
+    m_Localized: Controllo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1287348125697
+    m_Localized: "S\xEC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1287348125698
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5357618167808
+    m_Localized: Per La Tua Comunicazione
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16016326098944
+    m_Localized: Collocamento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16480379699200
+    m_Localized: (Nome Dell'App)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16772668162048
+    m_Localized: Caricamento Delle Informazioni Di Apprendimento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17559758667776
+    m_Localized: Imparare La Lingua
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17757658513408
+    m_Localized: Lingua Del Sistema
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18317648429056
+    m_Localized: Cinese
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21048110972928
+    m_Localized: Tedesco
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23600965713920
+    m_Localized: Inglese
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23976439808000
+    m_Localized: Francese
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24719947300864
+    m_Localized: Italiano
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24907579490304
+    m_Localized: Giapponese
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25329119625216
+    m_Localized: Coreano
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26755820519424
+    m_Localized: Russo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26574593032192
+    m_Localized: Salva
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

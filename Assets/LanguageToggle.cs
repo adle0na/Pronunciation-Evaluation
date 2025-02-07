@@ -13,7 +13,7 @@ public class LanguageToggle : MonoBehaviour
 
     public Language language;
 
-    private bool isSystemLanguage;
+    public bool isSystemLanguage;
 
     private void Start()
     {

@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: New Table_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: b849166082219a941adbaa4214a67249, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1287348125696
+    m_Localized: Check
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1287348125697
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1287348125698
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5357618167808
+    m_Localized: For Your Communication
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16016326098944
+    m_Localized: Setting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16480379699200
+    m_Localized: (App Name)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16772668162048
+    m_Localized: Loading Learning Information
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17559758667776
+    m_Localized: Learning Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17757658513408
+    m_Localized: System Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18317648429056
+    m_Localized: Chinese
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21048110972928
+    m_Localized: German
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23600965713920
+    m_Localized: English
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23976439808000
+    m_Localized: French
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24719947300864
+    m_Localized: Italian
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24907579490304
+    m_Localized: Japanese
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25329119625216
+    m_Localized: Korean
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26755820519424
+    m_Localized: Russian
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26574593032192
+    m_Localized: Save
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
