@@ -90,6 +90,91 @@ MonoBehaviour:
     m_Localized: Save
     m_Metadata:
       m_Items: []
+  - m_Id: 28319322832896
+    m_Localized: Choose The Theme You Want To Learn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31203594698752
+    m_Localized: Airplane
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31393076576256
+    m_Localized: Restaurant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31542897115136
+    m_Localized: Shopping
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31727043837952
+    m_Localized: Lodging
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31854080917504
+    m_Localized: Traffic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32031046991872
+    m_Localized: Tourist Attraction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32153659080704
+    m_Localized: Start Learning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56172424822784
+    m_Localized: Accuracy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61538885795840
+    m_Localized: Fluency
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61745581096960
+    m_Localized: Meter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65519448064000
+    m_Localized: Completeness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66588492267520
+    m_Localized: Next
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27656589246464
+    m_Localized: Pronunciation Score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1112403822346240
+    m_Localized: Press And Hold The Button To Read The Sentence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1189522329927680
+    m_Localized: If Your Pronunciation Score Is 60 Points Or Higher, You Can Move
+      On To The Next Sentence.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1190517097201664
+    m_Localized: After Pressing The Button, Read The Sentence And Evaluate Your Pronunciation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1190639201779712
+    m_Localized: A Total Of 10 Sentences Are Presented.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1193672103002112
+    m_Localized: End Of Study
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1193835093655552
+    m_Localized: Do It Again
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1194293107458048
+    m_Localized: '- Learning Outcomes -'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

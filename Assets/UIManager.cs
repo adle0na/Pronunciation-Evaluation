@@ -12,6 +12,12 @@ public class UIManager : GenericSingleton<UIManager>
 
     public Color darkGrayTextColor;
 
+    public Color perfectScoreColor;
+
+    public Color normalScoreColor;
+
+    public Color badScoreColor;
+    
     public GameObject currentPage;
 
     private void Start()

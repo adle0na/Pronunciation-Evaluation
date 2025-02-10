@@ -263,9 +263,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4753675733589383110}
-        m_TargetAssemblyTypeName: ThemaToggle, Assembly-CSharp
-        m_MethodName: OnValueChanged
+      - m_Target: {fileID: 288062275189550810}
+        m_TargetAssemblyTypeName: MainUIPage, Assembly-CSharp
+        m_MethodName: OnClickChangeTheme
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   languageText: {fileID: 748022568298175835}
-  theme: 0
+  theme: 1
 --- !u!1 &528952666664083872
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,9 +586,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5043367889252053480}
-        m_TargetAssemblyTypeName: ThemaToggle, Assembly-CSharp
-        m_MethodName: OnValueChanged
+      - m_Target: {fileID: 288062275189550810}
+        m_TargetAssemblyTypeName: MainUIPage, Assembly-CSharp
+        m_MethodName: OnClickChangeTheme
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -612,7 +612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   languageText: {fileID: 4258502091655418924}
-  theme: 0
+  theme: 3
 --- !u!1 &1618706265264295080
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,7 +981,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -115, y: 35}
-  m_SizeDelta: {x: 25, y: 50}
+  m_SizeDelta: {x: 230, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1707213668129448651
 CanvasRenderer:
@@ -1345,7 +1345,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -115, y: 35}
-  m_SizeDelta: {x: 25, y: 50}
+  m_SizeDelta: {x: 230, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8712377597572267323
 CanvasRenderer:
@@ -2052,7 +2052,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -115, y: 35}
-  m_SizeDelta: {x: 25, y: 50}
+  m_SizeDelta: {x: 230, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4798645949591524622
 CanvasRenderer:
@@ -2278,9 +2278,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 797537683030691981}
-        m_TargetAssemblyTypeName: ThemaToggle, Assembly-CSharp
-        m_MethodName: OnValueChanged
+      - m_Target: {fileID: 288062275189550810}
+        m_TargetAssemblyTypeName: MainUIPage, Assembly-CSharp
+        m_MethodName: OnClickChangeTheme
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2304,7 +2304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   languageText: {fileID: 7924032927715757749}
-  theme: 0
+  theme: 4
 --- !u!1 &4526189596658290847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2341,7 +2341,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -115, y: 35}
-  m_SizeDelta: {x: 25, y: 50}
+  m_SizeDelta: {x: 230, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5876627985249582722
 CanvasRenderer:
@@ -2987,9 +2987,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7539977892287655205}
-        m_TargetAssemblyTypeName: ThemaToggle, Assembly-CSharp
-        m_MethodName: OnValueChanged
+      - m_Target: {fileID: 288062275189550810}
+        m_TargetAssemblyTypeName: MainUIPage, Assembly-CSharp
+        m_MethodName: OnClickChangeTheme
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3013,7 +3013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   languageText: {fileID: 4662302320442495402}
-  theme: 0
+  theme: 2
 --- !u!1 &5612357381979613249
 GameObject:
   m_ObjectHideFlags: 0
@@ -3176,9 +3176,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6561416923528681414}
-        m_TargetAssemblyTypeName: ThemaToggle, Assembly-CSharp
-        m_MethodName: OnValueChanged
+      - m_Target: {fileID: 288062275189550810}
+        m_TargetAssemblyTypeName: MainUIPage, Assembly-CSharp
+        m_MethodName: OnClickChangeTheme
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3239,7 +3239,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -115, y: 35}
-  m_SizeDelta: {x: 25, y: 50}
+  m_SizeDelta: {x: 230, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5535304195864869834
 CanvasRenderer:
@@ -3813,9 +3813,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6953169243532819064}
-        m_TargetAssemblyTypeName: ThemaToggle, Assembly-CSharp
-        m_MethodName: OnValueChanged
+      - m_Target: {fileID: 288062275189550810}
+        m_TargetAssemblyTypeName: MainUIPage, Assembly-CSharp
+        m_MethodName: OnClickChangeTheme
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3839,7 +3839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   languageText: {fileID: 1905155853321988237}
-  theme: 0
+  theme: 5
 --- !u!1 &9194360959349043581
 GameObject:
   m_ObjectHideFlags: 0
@@ -3876,7 +3876,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -115, y: 35}
-  m_SizeDelta: {x: 25, y: 50}
+  m_SizeDelta: {x: 230, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4632517097956500332
 CanvasRenderer:

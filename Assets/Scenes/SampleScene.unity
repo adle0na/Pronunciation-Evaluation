@@ -189,6 +189,9 @@ MonoBehaviour:
   - {fileID: 8810565240047167731, guid: 35a88cd7d284f274085f5ec126321dc8, type: 3}
   canvas: {fileID: 629537536}
   darkGrayTextColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  perfectScoreColor: {r: 0.12941177, g: 0.5529412, b: 0.31764707, a: 1}
+  normalScoreColor: {r: 0.854902, g: 0.7254902, b: 0.20392159, a: 1}
+  badScoreColor: {r: 0.65882355, g: 0, b: 0, a: 1}
   currentPage: {fileID: 0}
 --- !u!4 &245617372
 Transform:

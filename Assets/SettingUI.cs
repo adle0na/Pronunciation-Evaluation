@@ -5,22 +5,35 @@ using System.Linq;
 using OpenAI;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
+using UnityEngine.UI;
 
 public class SettingUI : MonoBehaviour
 {
-    [SerializeField] private List<LanguageToggle> languageToggles;
+    [SerializeField] private List<LanguageToggle> targetLanguageToggles;
 
-    private bool isChanging;
-    
+    [SerializeField] private List<LanguageToggle> systemLanguageToggles;
+
     private void Start()
     {
-        foreach (var toggle in languageToggles)
+        foreach (var toggle in targetLanguageToggles)
         {
             if (toggle.language == ChatGPTManager.Instance.learningLanguage)
             {
-                toggle.SetOn();
+                toggle.GetComponent<Toggle>().isOn = true;
             }
         }
+
+        foreach (var toggle in systemLanguageToggles)
+        {
+            if (toggle.language == ChatGPTManager.Instance.systemLanguage)
+            {
+                toggle.GetComponent<Toggle>().isOn = true;
+            }
+        }
+        
+        ChangeTargetLanguage();
+
+        ChangeSystemLanguage();
     }
 
     public void GotoMain()
@@ -30,23 +43,53 @@ public class SettingUI : MonoBehaviour
 
     public void SaveAndGotoMain()
     {
-        // 세이브 함수
-        ChatGPTManager.Instance.InitStudy();
-        
         UIManager.Instance.PageChange(2);
     }
 
+    public void ChangeTargetLanguage()
+    {
+        foreach (var toggle in targetLanguageToggles)
+        {
+            if (toggle.GetComponent<Toggle>().isOn)
+            {
+                ChatGPTManager.Instance.learningLanguage = toggle.language;
+            }
+
+            toggle.languageText.color = toggle.GetComponent<Toggle>().isOn
+                ? Color.white
+                : UIManager.Instance.darkGrayTextColor;
+        }
+
+        foreach (var toggle in systemLanguageToggles)
+        {
+            toggle.SetTouchable(toggle.language != ChatGPTManager.Instance.learningLanguage);
+        }
+    }
+    
     public void ChangeSystemLanguage()
     {
-        if (isChanging) return;
-
         StartCoroutine(ChangeSysmtemLanguageCor());
     }
 
     IEnumerator ChangeSysmtemLanguageCor()
     {
-        isChanging = true;
+        foreach (var toggle in systemLanguageToggles)
+        {
+            toggle.GetComponent<Toggle>().interactable = false;
+        }
+        
+        foreach (var toggle in systemLanguageToggles)
+        {
+            if (toggle.GetComponent<Toggle>().isOn)
+            {
+                ChatGPTManager.Instance.systemLanguage = toggle.language;
+            }
 
+            toggle.languageText.color = toggle.GetComponent<Toggle>().isOn
+                ? Color.white
+                : UIManager.Instance.darkGrayTextColor;
+        }
+        
         yield return LocalizationSettings.InitializationOperation;
 
         var locales = LocalizationSettings.AvailableLocales.Locales;
@@ -65,7 +108,15 @@ public class SettingUI : MonoBehaviour
             Debug.LogWarning($"[Localization] Language {targetLanguageCode} not found in available locales!");
         }
 
-        isChanging = false;
+        foreach (var toggle in systemLanguageToggles)
+        {
+            toggle.SetTouchable(toggle.language != ChatGPTManager.Instance.learningLanguage);
+        }
+        
+        foreach (var toggle in targetLanguageToggles)
+        {
+            toggle.SetTouchable(toggle.language != ChatGPTManager.Instance.systemLanguage);
+        }
     }
     
     private string GetLanguageCode(Language language)

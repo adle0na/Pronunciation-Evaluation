@@ -90,6 +90,92 @@ MonoBehaviour:
     m_Localized: Speichern
     m_Metadata:
       m_Items: []
+  - m_Id: 28319322832896
+    m_Localized: "W\xE4hlen Sie Das Thema Aus, Das Sie Lernen M\xF6chten"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31203594698752
+    m_Localized: Flugzeug
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31393076576256
+    m_Localized: Restaurant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31542897115136
+    m_Localized: Einkaufen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31727043837952
+    m_Localized: Unterkunft
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31854080917504
+    m_Localized: Verkehr
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32031046991872
+    m_Localized: Touristenattraktion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32153659080704
+    m_Localized: Beginnen Sie Mit Dem Lernen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56172424822784
+    m_Localized: Genauigkeit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61538885795840
+    m_Localized: "Gel\xE4ufigkeit"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61745581096960
+    m_Localized: Meter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65519448064000
+    m_Localized: "Vollst\xE4ndigkeit"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66588492267520
+    m_Localized: "N\xE4chste"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27656589246464
+    m_Localized: Aussprache-Score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1112403822346240
+    m_Localized: "Halten Sie Die Taste Gedr\xFCckt, Um Den Satz Zu Lesen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1189522329927680
+    m_Localized: "Wenn Ihr Aussprache-Score 60 Punkte Oder Mehr Betr\xE4gt, K\xF6nnen
+      Sie Mit Dem N\xE4chsten Satz Fortfahren."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1190517097201664
+    m_Localized: "Nachdem Sie Die Taste Gedr\xFCckt Haben, Lesen Sie Den Satz Und
+      Bewerten Sie Ihre Aussprache."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1190639201779712
+    m_Localized: "Insgesamt Werden 10 S\xE4tze Pr\xE4sentiert."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1193672103002112
+    m_Localized: Ende Des Studiums
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1193835093655552
+    m_Localized: Mach Es Noch Einmal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1194293107458048
+    m_Localized: '- Lernergebnisse -'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

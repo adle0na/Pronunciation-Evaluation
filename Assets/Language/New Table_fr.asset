@@ -90,6 +90,92 @@ MonoBehaviour:
     m_Localized: Sauvegarder
     m_Metadata:
       m_Items: []
+  - m_Id: 28319322832896
+    m_Localized: "Choisissez Le Th\xE8me Que Vous Souhaitez Apprendre"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31203594698752
+    m_Localized: Avion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31393076576256
+    m_Localized: Restaurant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31542897115136
+    m_Localized: Achats
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31727043837952
+    m_Localized: "H\xE9bergement"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31854080917504
+    m_Localized: Trafic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32031046991872
+    m_Localized: Attraction Touristique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32153659080704
+    m_Localized: "Commencer \xC0 Apprendre"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56172424822784
+    m_Localized: "Pr\xE9cision"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61538885795840
+    m_Localized: Aisance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61745581096960
+    m_Localized: "M\xE8tre"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65519448064000
+    m_Localized: "Exhaustivit\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66588492267520
+    m_Localized: Suivant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27656589246464
+    m_Localized: Score De Prononciation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1112403822346240
+    m_Localized: Appuyez Et Maintenez Le Bouton Pour Lire La Phrase
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1189522329927680
+    m_Localized: "Si Votre Score De Prononciation Est De 60 Points Ou Plus, Vous
+      Pouvez Passer \xC0 La Phrase Suivante."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1190517097201664
+    m_Localized: "Apr\xE8s Avoir Appuy\xE9 Sur Le Bouton, Lisez La Phrase Et \xC9valuez
+      Votre Prononciation."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1190639201779712
+    m_Localized: "Un Total De 10 Phrases Sont Pr\xE9sent\xE9es."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1193672103002112
+    m_Localized: "Fin Des \xC9tudes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1193835093655552
+    m_Localized: Fais-Le Encore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1194293107458048
+    m_Localized: "- R\xE9sultats D'Apprentissage -"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

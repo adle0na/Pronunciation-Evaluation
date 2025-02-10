@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using OpenAI;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainUIPage : MonoBehaviour
 {
@@ -19,6 +20,17 @@ public class MainUIPage : MonoBehaviour
         }
     }
 
+    public void OnClickChangeTheme()
+    {
+        foreach (var toggle in themaToggles)
+        {
+            if (toggle.GetComponent<Toggle>().isOn)
+            {
+                ChatGPTManager.Instance.userSelectedTheme = toggle.theme;
+            }
+        }
+    }
+    
     public void GotoSetting()
     {
         UIManager.Instance.PageChange(1);
@@ -26,6 +38,8 @@ public class MainUIPage : MonoBehaviour
 
     public void GotoStudy()
     {
+        ChatGPTManager.Instance.InitStudy();
+        
         UIManager.Instance.PageChange(3);
     }
 }

@@ -90,6 +90,91 @@ MonoBehaviour:
     m_Localized: Salva
     m_Metadata:
       m_Items: []
+  - m_Id: 28319322832896
+    m_Localized: Scegli Il Tema Che Vuoi Imparare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31203594698752
+    m_Localized: Aereo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31393076576256
+    m_Localized: Ristorante
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31542897115136
+    m_Localized: Shopping
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31727043837952
+    m_Localized: Alloggio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31854080917504
+    m_Localized: Traffico
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32031046991872
+    m_Localized: Attrazione Turistica
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32153659080704
+    m_Localized: Inizia A Imparare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56172424822784
+    m_Localized: Precisione
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61538885795840
+    m_Localized: "Fluidit\xE0"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61745581096960
+    m_Localized: Metro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65519448064000
+    m_Localized: Completezza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66588492267520
+    m_Localized: Prossimo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27656589246464
+    m_Localized: Punteggio Di Pronuncia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1112403822346240
+    m_Localized: Tieni Premuto Il Pulsante Per Leggere La Frase
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1189522329927680
+    m_Localized: "Se Il Tuo Punteggio Di Pronuncia \xC8 Pari O Superiore A 60 Punti,
+      Puoi Passare Alla Frase Successiva."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1190517097201664
+    m_Localized: Dopo Aver Premuto Il Pulsante, Leggi La Frase E Valuta La Tua Pronuncia.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1190639201779712
+    m_Localized: Vengono Presentate Un Totale Di 10 Frasi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1193672103002112
+    m_Localized: Fine Dello Studio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1193835093655552
+    m_Localized: Fallo Di Nuovo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1194293107458048
+    m_Localized: '- Risultati Di Apprendimento -'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
