@@ -146,8 +146,11 @@ MonoBehaviour:
     m_Localized: Aussprache-Score
     m_Metadata:
       m_Items: []
-  - m_Id: 1112403822346240
-    m_Localized: "Halten Sie Die Taste Gedr\xFCckt, Um Den Satz Zu Lesen"
+  - m_Id: 2586197363621888
+    m_Localized: "Die Meisten Aussprachen Sind Korrekt Und Satzfluss Und Betonung
+      Sind Stabil. Bestimmte W\xF6rter K\xF6nnen Sich Jedoch Etwas Seltsam Anf\xFChlen.
+      Es Erfordert Feinabstimmung Und \xDCbung, Um Eine Fl\xFCssigere Aussprache
+      Zu Erreichen."
     m_Metadata:
       m_Items: []
   - m_Id: 1189522329927680
@@ -174,6 +177,34 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1194293107458048
     m_Localized: '- Lernergebnisse -'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553552852320256
+    m_Localized: "W\xE4hlen Sie Ihren Lernschwierigkeitsgrad"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555884805652480
+    m_Localized: (1 Sehr Einfach 2 Einfach 3 Normal 4 Komplex 5 Sehr Komplex)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2568410926776320
+    m_Localized: "Die Aussprache Ist Im Allgemeinen Klar Und Die S\xE4tze Werden
+      Gut Vermittelt. Allerdings K\xF6nnen Einige Kl\xE4nge Ungenau Sein Und Intonation
+      Und Rhythmus K\xF6nnen Etwas Unbeholfen Sein. Ich Hoffe, Dass Sie Durch Konsequentes
+      \xDCben Nat\xFCrlicher Werden K\xF6nnen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2586290540085248
+    m_Localized: "Die Aussprache Ist Klar Und Nat\xFCrlich, Und Muttersprachler K\xF6nnen
+      Sie Ohne Gro\xDFe Probleme Verstehen. Intonation Und Betonung Sind Gut Ausbalanciert,
+      Sodass Die Aussprache Insgesamt Nat\xFCrlich Ist."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2586369393000448
+    m_Localized: "Die Aussprache \xC4hnelt Fast Der Eines Muttersprachlers Und Betonung,
+      Intonation Und Rhythmus Sind Auf Nat\xFCrliche Weise Harmonisiert. Seine Aussprachef\xE4higkeiten
+      Sind So Hervorragend, Dass Sich Die Zuh\xF6rer \xDCberhaupt Nicht Unbehaglich
+      F\xFChlen Werden!"
     m_Metadata:
       m_Items: []
   references:

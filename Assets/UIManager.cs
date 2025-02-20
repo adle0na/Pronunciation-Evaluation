@@ -10,6 +10,10 @@ public class UIManager : GenericSingleton<UIManager>
 
     [SerializeField] private Transform canvas;
 
+    private Transform popupParent;
+
+    [SerializeField] private GameObject popupParentPrefab;
+
     public Color darkGrayTextColor;
 
     public Color perfectScoreColor;
@@ -35,5 +39,11 @@ public class UIManager : GenericSingleton<UIManager>
         GameObject page = Instantiate(pageList[index], canvas);
 
         currentPage = page;
+        
+        GameObject popupTransformObj = Instantiate(popupParentPrefab, canvas);
+
+        popupTransformObj.transform.SetSiblingIndex(canvas.childCount - 1);
+
+        popupParent = popupTransformObj.transform;
     }
 }

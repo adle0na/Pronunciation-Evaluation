@@ -146,8 +146,11 @@ MonoBehaviour:
     m_Localized: Score De Prononciation
     m_Metadata:
       m_Items: []
-  - m_Id: 1112403822346240
-    m_Localized: Appuyez Et Maintenez Le Bouton Pour Lire La Phrase
+  - m_Id: 2586197363621888
+    m_Localized: "La Plupart Des Prononciations Sont Correctes, Et Le Flux Des Phrases
+      Et L'Accent Sont Stables. Cependant, Certains Mots Peuvent Para\xEEtre Un Peu
+      G\xEAnants. Cela N\xE9cessite Un R\xE9glage Fin Et De La Pratique Pour Obtenir
+      Une Prononciation Plus Fluide."
     m_Metadata:
       m_Items: []
   - m_Id: 1189522329927680
@@ -174,6 +177,34 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1194293107458048
     m_Localized: "- R\xE9sultats D'Apprentissage -"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553552852320256
+    m_Localized: "Choisissez Votre Niveau De Difficult\xE9 D'Apprentissage"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555884805652480
+    m_Localized: "(1 Tr\xE8s Simple 2 Simple 3 Normal 4 Complexe 5 Tr\xE8s Complexe)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2568410926776320
+    m_Localized: "La Prononciation Est G\xE9n\xE9ralement Claire Et Les Phrases Sont
+      Bien Transmises. Cependant, Certains Sons Peuvent \xCAtre Inexacts, Et L'Intonation
+      Et Le Rythme Peuvent \xCAtre Quelque Peu G\xEAnants. J'Esp\xE8re Que Vous Pourrez
+      Devenir Plus Naturel Gr\xE2ce \xC0 Une Pratique Coh\xE9rente."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2586290540085248
+    m_Localized: "La Prononciation Est Claire Et Naturelle, Et Les Locuteurs Natifs
+      Peuvent La Comprendre Sans Trop De Probl\xE8mes. L'Intonation Et L'Accent Sont
+      Bien \xC9quilibr\xE9s, Donc La Prononciation Globale Est Naturelle."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2586369393000448
+    m_Localized: "La Prononciation Est Presque Similaire \xC0 Celle D'Un Locuteur
+      Natif, Et L'Accent, L'Intonation Et Le Rythme Sont Naturellement Harmonis\xE9s.
+      Ses Capacit\xE9s De Prononciation Sont Si Excellentes Que Les Auditeurs Ne
+      Se Sentiront Pas Du Tout G\xEAn\xE9s\_!"
     m_Metadata:
       m_Items: []
   references:

@@ -128,7 +128,7 @@ public class SettingUI : MonoBehaviour
             case Language.French: return "fr";
             case Language.Korean: return "ko";
             case Language.Japanese: return "ja";
-            case Language.Chinese: return "zh";
+            case Language.Chinese: return "zh-Hans";
             case Language.Italian: return "it";
             case Language.Russian: return "ru";
             default: return "en"; // 기본값: 영어

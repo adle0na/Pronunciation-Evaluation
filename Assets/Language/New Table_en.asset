@@ -146,8 +146,10 @@ MonoBehaviour:
     m_Localized: Pronunciation Score
     m_Metadata:
       m_Items: []
-  - m_Id: 1112403822346240
-    m_Localized: Press And Hold The Button To Read The Sentence
+  - m_Id: 2586197363621888
+    m_Localized: Most Pronunciation Is Correct, And Sentence Flow And Stress Are
+      Stable. However, Certain Words May Feel A Little Awkward. It Requires Fine
+      Tuning And Practice To Achieve More Fluent Pronunciation.
     m_Metadata:
       m_Items: []
   - m_Id: 1189522329927680
@@ -173,6 +175,32 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1194293107458048
     m_Localized: '- Learning Outcomes -'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553552852320256
+    m_Localized: Choose Your Learning Difficulty Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555884805652480
+    m_Localized: (1 very simple 2 simple 3 normal 4 complex 5 very complex)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2568410926776320
+    m_Localized: Pronunciation Is Generally Clear And Sentences Are Conveyed Well.
+      However, Some Sounds May Be Inaccurate, And Intonation And Rhythm May Be Somewhat
+      Awkward. I Hope You Can Become More Natural Through Consistent Practice.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2586290540085248
+    m_Localized: The Pronunciation Is Clear And Natural, And Native Speakers Can
+      Understand It Without Much Trouble. The Intonation And Stress Are Well Balanced,
+      So The Overall Pronunciation Is Natural.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2586369393000448
+    m_Localized: The Pronunciation Is Almost Similar To That Of A Native Speaker,
+      And Stress, Intonation, And Rhythm Are Naturally Harmonized. His Pronunciation
+      Skills Are So Excellent That Listeners Won'T Feel Awkward At All!
     m_Metadata:
       m_Items: []
   references:

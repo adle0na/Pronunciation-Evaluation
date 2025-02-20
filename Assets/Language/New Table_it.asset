@@ -146,8 +146,11 @@ MonoBehaviour:
     m_Localized: Punteggio Di Pronuncia
     m_Metadata:
       m_Items: []
-  - m_Id: 1112403822346240
-    m_Localized: Tieni Premuto Il Pulsante Per Leggere La Frase
+  - m_Id: 2586197363621888
+    m_Localized: "La Maggior Parte Della Pronuncia \xC8 Corretta E Il Flusso Delle
+      Frasi E L'Accento Sono Stabili. Tuttavia, Alcune Parole Possono Sembrare Un
+      Po\u2019 Imbarazzanti. Richiede Messa A Punto E Pratica Per Ottenere Una Pronuncia
+      Pi\xF9 Fluida."
     m_Metadata:
       m_Items: []
   - m_Id: 1189522329927680
@@ -173,6 +176,34 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1194293107458048
     m_Localized: '- Risultati Di Apprendimento -'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553552852320256
+    m_Localized: "Scegli Il Tuo Livello Di Difficolt\xE0 Di Apprendimento"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555884805652480
+    m_Localized: (1 Molto Semplice 2 Semplice 3 Normale 4 Complesso 5 Molto Complesso)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2568410926776320
+    m_Localized: "La Pronuncia \xC8 Generalmente Chiara E Le Frasi Vengono Trasmesse
+      Bene. Tuttavia, Alcuni Suoni Potrebbero Essere Imprecisi E L'Intonazione E
+      Il Ritmo Potrebbero Essere Alquanto Imbarazzanti. Spero Che Tu Possa Diventare
+      Pi\xF9 Naturale Attraverso La Pratica Costante."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2586290540085248
+    m_Localized: "La Pronuncia \xC8 Chiara E Naturale E I Madrelingua Possono Capirla
+      Senza Troppi Problemi. L'Intonazione E L'Accento Sono Ben Bilanciati, Quindi
+      La Pronuncia Complessiva \xC8 Naturale."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2586369393000448
+    m_Localized: "La Pronuncia \xC8 Quasi Simile A Quella Di Un Madrelingua E L'Accento,
+      L'Intonazione E Il Ritmo Sono Naturalmente Armonizzati. Le Sue Capacit\xE0
+      Di Pronuncia Sono Cos\xEC Eccellenti Che Gli Ascoltatori Non Si Sentiranno
+      Affatto A Disagio!"
     m_Metadata:
       m_Items: []
   references:

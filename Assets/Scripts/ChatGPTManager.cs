@@ -32,9 +32,12 @@ namespace OpenAI
         public Theme userSelectedTheme;
 
         public bool isReady;
-        
+
+        public int difficulty;
         public void InitStudy()
         {
+            difficulty = PlayerPrefs.GetInt("difficulty");
+            
             openai = new OpenAIApi(apiKey: openai_key);
             
             isReady = false;            
@@ -47,14 +50,19 @@ namespace OpenAI
         {
           var temp = new List<ChatMessage>();
             
+          string currentTime = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
+
           string prompt = $"Generate exactly 10 sentences commonly spoken by a tourist in a {userSelectedTheme.ToString().ToLower()} setting, in {learningLanguage.ToString().ToLower()}. " +
                           "Each sentence should be around 5 seconds long. " +
                           $"Translate each sentence into {systemLanguage.ToString().ToLower()} and provide both. " +
                           "These sentences should be useful for a traveler communicating in common situations, such as asking for information, ordering food, or navigating unfamiliar places. " +
+                          $"Adjust the complexity of the sentences based on a difficulty level of {difficulty} (1 = very simple, 5 = very complex). " +
+                          "For lower difficulty, use shorter, basic phrases. For higher difficulty, include more complex grammar and vocabulary. " +
+                          $"Timestamp: {currentTime}. " +
                           "Format: Original Sentence: [Original sentence] Translated Sentence: [Translated sentence] " +
                           "Your response must contain only these pairs, nothing else. " +
                           "Do not add introductions, explanations, or extra text.";
-            
+          
             temp.Add(new ChatMessage { Role = "system", Content = prompt });
             
             // Complete the instruction

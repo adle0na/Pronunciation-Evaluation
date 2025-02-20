@@ -8,18 +8,13 @@ using UnityEngine.UI;
 public class ThemaToggle : MonoBehaviour
 {
     private Toggle toggle;
-    [SerializeField] private TMP_Text languageText;
+    public TMP_Text languageText;
 
     public Theme theme;
-    
-    private void Start()
-    {
-        toggle = GetComponent<Toggle>();
-    }
 
     public void OnValueChanged()
     {
-        languageText.color = toggle.isOn ? Color.white : UIManager.Instance.darkGrayTextColor;
+        toggle = GetComponent<Toggle>();
 
         if (toggle.isOn)
         {
@@ -29,6 +24,8 @@ public class ThemaToggle : MonoBehaviour
     
     public void SetOn()
     {
+        toggle = GetComponent<Toggle>();
+        
         toggle.isOn = true;
     }
 }

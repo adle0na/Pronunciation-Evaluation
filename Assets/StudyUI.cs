@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
 using Microsoft.CognitiveServices.Speech.PronunciationAssessment;
@@ -14,6 +16,9 @@ using UnityEngine.UI;
 [Serializable]
 public class StudyUI : MonoBehaviour
 {
+	private const string speechKey = "2yR76y3Nzuo6DMt9pynMc9YvxyyslQCe7djluvqXIlokyKrZtuLJJQQJ99BBACNns7RXJ3w3AAAYACOGx7ny";
+	private const string speechRegion = "koreacentral";
+	
     [SerializeField] private TMP_Text currentPageText;
     
     [SerializeField] private GameObject scoreGroup;
@@ -45,6 +50,9 @@ public class StudyUI : MonoBehaviour
     [SerializeField] private GameObject lastResultPage;
 
     private PronunciationAssessmentResult getScore;
+    private SpeechConfig speechConfig;
+    private SpeechSynthesizer speechSynthesizer;
+    private List<ScoreValue> scoreList;
 
     private string _microphoneID = null;
     private AudioClip _recording = null;
@@ -54,6 +62,10 @@ public class StudyUI : MonoBehaviour
     private bool enableMiscue = true;
     private bool isRecognizing = false;
     private bool isRecordAble = true;
+
+    private string recognizedText;
+
+    private bool isSamplePlaying;
 
     public int currentIndex = 0;
     void Start()
@@ -86,26 +98,51 @@ public class StudyUI : MonoBehaviour
     
     public void SetPage(int index)
     {
-	    if (index > 9)
-	    {
-		    lastResultPage.SetActive(true);
-	    }
-	    else
-	    {
-		    scoreGroup.SetActive(false);
+	    scoreGroup.SetActive(false);
 	    
-		    currentPageText.text = $"{index + 1}/10";
+	    currentPageText.text = $"{index + 1}/10";
 
-		    targetText.text = ChatGPTManager.Instance.createdSentences[index];
+	    targetText.text = ChatGPTManager.Instance.createdSentences[index];
 
-		    localText.text = ChatGPTManager.Instance.translatedSentences[index];
+	    localText.text = ChatGPTManager.Instance.translatedSentences[index];
 
-		    goNextButton.interactable = false;
-	    }
+	    goNextButton.interactable = false;
     }
 
     public void NextPage()
     {
+	    if (currentIndex == 9)
+	    {
+		    lastResultPage.SetActive(true);
+
+		    ScoreValue averageScore = new ScoreValue();
+
+		    double calPronunciationScore = 0;
+		    double calCompleteness = 0;
+		    double calAccuracy = 0;
+		    double calProsody = 0;
+		    double calFluency = 0;
+		    
+		    foreach (var score in scoreList)
+		    {
+			    calPronunciationScore += score.PronunciationScore;
+			    calCompleteness += score.CompletenessScore;
+			    calAccuracy += score.AccuracyScore;
+			    calProsody += score.ProsodyScore;
+			    calFluency += score.FluencyScore;
+		    }
+
+		    averageScore.PronunciationScore = calPronunciationScore / 10;
+		    averageScore.CompletenessScore = calCompleteness / 10;
+		    averageScore.AccuracyScore = calCompleteness / 10;
+		    averageScore.ProsodyScore = calProsody / 10;
+		    averageScore.FluencyScore = calFluency / 10;
+		    
+		    lastResultPage.GetComponent<LastPage>().SetResultToUI(averageScore);
+		    
+		    return;
+	    }
+	    
 	    currentIndex++;
 	    
 	    SetPage(currentIndex);
@@ -287,63 +324,84 @@ public class StudyUI : MonoBehaviour
 	
 	public async void StartRealTimePronunciationAssessment(string filePath, string targetText)
 	{
-		if (isRecognizing) return; // 이미 음성 인식이 진행 중이면 중복 실행 방지
-		if (!File.Exists(filePath))
-		{
-			Debug.LogError("오디오 파일을 찾을 수 없습니다: " + filePath);
-			return;
-		}
-
-		isRecognizing = true;
-
-		getScore = null;
-		
-		var config = SpeechConfig.FromSubscription("2yR76y3Nzuo6DMt9pynMc9YvxyyslQCe7djluvqXIlokyKrZtuLJJQQJ99BBACNns7RXJ3w3AAAYACOGx7ny", "koreacentral");
-		Debug.Log("발음 평가 시작");
-
-		string languageCode = GetLanguageCode();
-		
-		// 저장된 녹음 파일을 오디오 입력으로 사용
-		using (var audioInput = AudioConfig.FromWavFileInput(filePath))
-		{
-			using (var recognizer = new SpeechRecognizer(config, languageCode, audioInput))
-			{
-				var referenceText = targetText;
-				var pronConfig = new PronunciationAssessmentConfig(referenceText, GradingSystem.HundredMark, Granularity.Phoneme, enableMiscue);
-				pronConfig.EnableProsodyAssessment();
-				pronConfig.ApplyTo(recognizer);
-
-				recognizer.Recognized += (s, e) =>
-				{
-					Debug.Log($"Recognized Text: {e.Result.Text}");
-					var pronResult = PronunciationAssessmentResult.FromResult(e.Result);
-					
-					Debug.Log($"정확성: {pronResult.AccuracyScore}, 발음: {pronResult.PronunciationScore}, 완전성: {pronResult.CompletenessScore}, 유창함: {pronResult.FluencyScore}, 운율감: {pronResult.ProsodyScore}");
-
-					getScore = pronResult;
-				};
-				recognizer.SessionStopped += (s, e) =>
-				{
-					Debug.Log("Session stopped.");
-				};
-
-				recognizer.Canceled += (s, e) =>
-				{
-					Debug.Log("Recognition canceled.");
-				};
-				
-				// 발음 평가 실행
-				await recognizer.RecognizeOnceAsync();
-			}
-		}
-
-		isRecognizing = false;
-		recordButton.interactable = true;
-
-		if (getScore != null)
-		{
-			SetResultToUI();
-		}
+	    if (isRecognizing) return;
+	    if (!File.Exists(filePath))
+	    {
+	        Debug.LogError("오디오 파일을 찾을 수 없습니다: " + filePath);
+	        return;
+	    }
+	
+	    isRecognizing = true;
+	    getScore = null;
+	    
+	    var config = SpeechConfig.FromSubscription(speechKey, speechRegion);
+	    Debug.Log("발음 평가 시작");
+	
+	    string languageCode = GetLanguageCode();
+	    
+	    using (var audioInput = AudioConfig.FromWavFileInput(filePath))
+	    {
+	        using (var recognizer = new SpeechRecognizer(config, languageCode, audioInput))
+	        {
+	            var referenceText = targetText;
+	            var pronConfig = new PronunciationAssessmentConfig(referenceText, GradingSystem.HundredMark, Granularity.Phoneme, enableMiscue);
+	            pronConfig.EnableProsodyAssessment();
+	            pronConfig.ApplyTo(recognizer);
+	
+	            recognizer.Recognized += (s, e) =>
+	            {
+	                if (e.Result != null)
+	                {
+	                    recognizedText = e.Result.Text;
+	                    Debug.Log($"Recognized Text: {e.Result.Text}");
+	                    
+	                    var pronResult = PronunciationAssessmentResult.FromResult(e.Result);
+	                    Debug.Log($"정확성: {pronResult.AccuracyScore}, 발음: {pronResult.PronunciationScore}, 완전성: {pronResult.CompletenessScore}, 유창함: {pronResult.FluencyScore}, 운율감: {pronResult.ProsodyScore}");
+	
+	                    getScore = pronResult;
+	                }
+	                else
+	                {
+	                    Debug.LogError("Recognized 이벤트 호출되었지만 e.Result가 null입니다.");
+	                }
+	            };
+	
+	            recognizer.Canceled += (s, e) =>
+	            {
+	                Debug.LogError($"Recognition canceled. Reason: {e.Reason}");
+	            };
+	
+	            recognizer.SessionStopped += (s, e) =>
+	            {
+	                Debug.Log("Session stopped.");
+	            };
+	
+	            // 발음 평가 실행
+	            await recognizer.StartContinuousRecognitionAsync();
+	
+	            // 5초 동안 실행 후 종료
+	            await Task.Delay(5000);
+	            await recognizer.StopContinuousRecognitionAsync();
+	        }
+	    }
+	    
+	    isRecognizing = false;
+	    recordButton.interactable = true;
+	
+	    if (string.IsNullOrEmpty(recognizedText))
+	    {
+	        Debug.LogError("음성 인식 실패. 다시 시도해주세요.");
+	        goNextButton.interactable = true; 
+	    }
+	    
+	    if (getScore != null)
+	    {
+	        SetResultToUI();
+	    }
+	    else
+	    {
+	        Debug.LogError("스코어 데이터를 가져오지 못했습니다.");
+	    }
 	}
 
 	public void SetResultToUI()
@@ -369,7 +427,9 @@ public class StudyUI : MonoBehaviour
 		meterSlider.value = (float)getScore.ProsodyScore * 0.01f;
 		GetScoreColor(getScore.ProsodyScore, meterSlider.fillRect.GetComponent<Image>());
 		
-		goNextButton.interactable = getScore.PronunciationScore >= 60;
+		//goNextButton.interactable = getScore.PronunciationScore >= 60;
+
+		goNextButton.interactable = true;
 	}
 
 	private void GetScoreColor(double checkValue, Image target)
@@ -425,5 +485,53 @@ public class StudyUI : MonoBehaviour
     public void BackToMain()
     {
 	    UIManager.Instance.PageChange(2);
+    }
+
+    public void SpeakText()
+    {
+	    if (isSamplePlaying) return;
+	    
+	    speechConfig = SpeechConfig.FromSubscription(speechKey, speechRegion);
+	    speechConfig.SpeechSynthesisVoiceName = "en-US-AvaMultilingualNeural";
+	    speechSynthesizer = new SpeechSynthesizer(speechConfig);
+	    
+	    StartCoroutine(SpeakTextCor());
+    }
+    
+    private IEnumerator SpeakTextCor()
+    {
+	    isSamplePlaying = true;
+	    
+	    string text = targetText.text;                                                         
+	    
+	    Task<SpeechSynthesisResult> task = speechSynthesizer.SpeakTextAsync(text);
+	    yield return new WaitUntil(() => task.IsCompleted);
+        
+	    HandleSpeechSynthesisResult(task.Result, text);
+    }
+    
+    private void HandleSpeechSynthesisResult(SpeechSynthesisResult result, string text)
+    {
+	    switch (result.Reason)
+	    {
+		    case ResultReason.SynthesizingAudioCompleted:
+			    Debug.Log($"Speech synthesized: {text}");
+			    break;
+		    case ResultReason.Canceled:
+			    var cancellation = SpeechSynthesisCancellationDetails.FromResult(result);
+			    Debug.Log($"Error: {cancellation.Reason}");
+			    if (cancellation.Reason == CancellationReason.Error)
+			    {
+				    Debug.LogError($"Error Code: {cancellation.ErrorCode}, Details: {cancellation.ErrorDetails}");
+			    }
+			    break;
+	    }
+
+	    isSamplePlaying = false;
+    }
+    
+    private void OnDestroy()
+    {
+	    speechSynthesizer?.Dispose();
     }
 }
